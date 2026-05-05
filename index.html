@@ -1,3 +1,4 @@
+chess.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,13 +59,37 @@
 
         h1, h2, h3, p, ul { margin: 0; padding: 0; }
 
+        /* --- Top Navigation & Logo --- */
+        .top-nav {
+            background-color: #000000; /* Black Nav */
+            padding: 15px 20px;
+            position: relative;
+            z-index: 90;
+            border-bottom: 2px solid var(--highlight-orange); 
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+        .brand-logo {
+            height: 45px; 
+            width: auto;
+            transition: transform 0.3s ease;
+            cursor: none; /* Relies on custom cursor */
+        }
+        .brand-logo:hover {
+            transform: scale(1.02);
+        }
+
         /* --- Hero Section & Canvas --- */
         .hero {
             position: relative;
             background: linear-gradient(135deg, rgba(1, 81, 62, 0.95), rgba(0, 66, 48, 0.95));
             color: var(--white);
             text-align: center;
-            padding: 120px 20px 100px;
+            padding: 100px 20px 80px;
             overflow: hidden;
         }
 
@@ -143,6 +168,14 @@
 <body>
 
     <div class="custom-cursor" id="cursor"></div>
+
+    <!-- BLACK TOP NAVIGATION & LOGO AREA -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <!-- LOCAL FILE LINK: Ensure logo.png is in the same folder. Fallback included just in case. -->
+            <img src="logo.png" alt="BrandIdea.ai Logo" class="brand-logo hover-target" onerror="this.onerror=null; this.src='https://via.placeholder.com/180x45/000000/ff9800?text=BrandIdea.ai';" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        </div>
+    </nav>
 
     <header class="hero">
         <canvas id="matrix-bg"></canvas>
